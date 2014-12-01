@@ -60,7 +60,7 @@
 MY_CFLAGS = -std=c++11
 
 # The linker options.
-MY_LIBS   =
+MY_LIBS   = -lcurl -lcurlpp  
 
 # The pre-processor options used by the cpp (man cpp for more).
 CPPFLAGS  = -Wall
