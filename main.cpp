@@ -1,6 +1,6 @@
-/*#include <curlpp/cURLpp.hpp>
+#include <curlpp/cURLpp.hpp>
 #include <curlpp/Easy.hpp>
-#include <curlpp/Options.hpp>*/
+#include <curlpp/Options.hpp>
 
 #include <iostream>
 #include <string>
@@ -11,10 +11,10 @@
 #define HEADER_ACCEPT "Accept:text/html,application/xhtml+xml,application/xml"
 #define HEADER_USER_AGENT "User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.70 Safari/537.17"
 #define SAVE_FILE "eda-bot-save.txt"
-#define NO_ROUND "AJAHBDBJbgajFbIfFrDdHkBbcSdRWDghOpJb"
+#define NO_ROUND "AJddAHasfBJbgajFbIfFrDdHkBbcSdRWDghOpJb"
 using namespace std;
 
-/*curlpp::Easy request;
+curlpp::Easy request;
 ostringstream responseStream;
 
 void curlpp_init() {
@@ -68,20 +68,19 @@ string get_round(int i) {
     }
     responseStream.str(string());
     return ret;
-}*/
+}
 
 
 int main() {
-  //curlpp_init();
-  int last_round = 7;//  read_last_round();
+  curlpp_init();
+  int last_round =  read_last_round();
   
   while(true) {
-    string res = NO_ROUND;// get_round(last_round + 1);
+    string res = get_round(last_round + 1);
     if (res !=  NO_ROUND) {
-      //send_twit(res);
+      send_twit(res);
       ++last_round;
     } else {
-      cout <<  "lolo";
       usleep(1000000);
     }
   }
