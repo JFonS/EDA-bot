@@ -50,7 +50,7 @@ void save_last_round(int last) {
 string get_round(int i) {
   string ret =  NO_ROUND;
   char buff[100];
-  sprintf(buff, "https://www.jutge.org/competitions/AlbertAtserias:EDA_2014_2015_Q1/round/%d", i);
+  sprintf(buff, "https://old.jutge.org/competitions/AlbertAtserias:BolaDeDrac2015/round/%d", i);
   string url = buff;
   request.setOpt(curlpp::options::Url(url));
 
